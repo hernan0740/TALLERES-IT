@@ -5,5 +5,6 @@
     <artifactId>app-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>pruebas</artifactId>
+  <artifactId>app-domain</artifactId>
+  <name>modulo de entidades</name>
 </project>
