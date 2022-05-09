@@ -63,7 +63,7 @@
 		      <img src="<%=aux.getImagen()%>" class="d-md-block w-100" width=80% height=100%>
 		      <div class="carousel-caption d-none d-md-block">
 		     <h5><%=aux.getDescripcion()%></h5>
-        		<p>Some representative placeholder content for the first slide.</p>
+        		
 		     </div>
 		     </div>
 		    <%	
@@ -89,8 +89,10 @@
 		<nav class="navbar navbar-dark bg-dark" >
 		  <div class="container-fluid"  >
 		    <a class="navbar-brand" href="#">UEFA CHAMPIONS LEAGUE</a>>
+		    <a class="navbar-brand" href="<%=request.getContextPath()%>/ListadoImagen">Listar Imagenes</a>
+		    
 		  </div>
-</nav>
+		</nav>
 		
 		
 		</footer>

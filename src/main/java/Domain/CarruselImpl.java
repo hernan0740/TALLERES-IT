@@ -1,15 +1,18 @@
 package Domain;
 
+
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import Conexion.GenericException;
 import Conexion.GetConnection;
 
 
-public class CarruselImpl {
+public class CarruselImpl  extends Carrusel{
 	
 	
 	
@@ -50,4 +53,48 @@ public class CarruselImpl {
 	
 	
 
+}
+	
+
+	public void editSQL(Carrusel newImg) throws GenericException, SQLException {
+		
+		String sql = "UPDATE carrusel "
+				+ "SET descripcion='"+newImg.getDescripcion()+"',"
+						+ "imagen='"+newImg.getImagen()+"' "
+				+ "WHERE id='"+newImg.id+"'";
+				
+		
+		try (Connection con = GetConnection.obtenerConexion();) {
+
+			
+			try (Statement st = con.createStatement()) {
+				System.out.println("conectado");
+				try (ResultSet res = st.executeQuery("SELECT id,descripcion,imagen FROM carrusel ")) {
+	
+				while (res.next()) {
+				
+				if(res.getInt("id")==newImg.id) {
+					
+					 st.execute(sql);
+					
+					 
+				}
+				
+			}
+				}
+		
+		
+		}catch (Exception e) {
+			
+		
+				
+		}
+
+
+
+
+
+
+}
+	
 }}
